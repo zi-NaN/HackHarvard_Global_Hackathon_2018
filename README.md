@@ -1,1 +1,1 @@
-# HackHarward_Global_Hackathon_2018
+# HackHarvard_Global_Hackathon_2018
