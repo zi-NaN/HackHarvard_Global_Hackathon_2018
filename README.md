@@ -11,6 +11,12 @@ Our team, Local One, has focused on the life quality of the elderly in Hong Kong
 ----------------------------------------------------------
 ### Demo
 
+![The Chat Room](/src/assets/imgs/demo/chat.png)
+
+![Mood](/src/assets/imgs/demo/mood.png)
+
+![Profile](/src/assets/imgs/demo/profile.png)
+
 ----------------------------------------------------------
 
 ### Version
