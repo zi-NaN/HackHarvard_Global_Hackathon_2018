@@ -1,4 +1,4 @@
-# HackHarvard_Global_Hackathon_2018
+# HackHarvard Global Hackathon 2018
 
 ### A Cantonese language detection/sentiment analysis tool
 
