@@ -1,9 +1,15 @@
 # HackHarvard_Global_Hackathon_2018
 
-The chat App with emotion analyzing function built for the local elderly powered by Ionic3.
+### A Cantonese language detection/sentiment analysis tool
 
+The chat App with emotion analyzing function built to help the local elderly with mental health.
 
-###### Version
+----------------------------------------------------------
+### Demo
+
+----------------------------------------------------------
+
+### Version
 ionic (Ionic CLI)  : 4.6.0 (/usr/local/lib/node_modules/ionic)
 
 Ionic Framework    : ionic-angular 3.9.2
