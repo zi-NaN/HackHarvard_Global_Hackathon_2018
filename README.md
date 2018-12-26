@@ -17,11 +17,11 @@ Our team, Local One, has focused on the life quality of the elderly in Hong Kong
 
 ##### Sentiment Analysis
 
-![Mood](/src/assets/imgs/demo/mood.png =30x100)
+<img src="/src/assets/imgs/demo/mood.png" alt="mood" width="320" height="450"/>
 
 ##### User Profile
 
-![Profile](/src/assets/imgs/demo/profile.png =30x100)
+<img src="/src/assets/imgs/demo/profile.png" alt="mood" width="320" height="450"/>
 
 ----------------------------------------------------------
 
