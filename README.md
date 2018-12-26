@@ -13,7 +13,7 @@ Our team, Local One, has focused on the life quality of the elderly in Hong Kong
 
 ##### Chat
 
-<img src="/src/assets/imgs/demo/chat.png" alt="chat" width="40" height="100"/>
+<img src="/src/assets/imgs/demo/chat.png" alt="chat" width="100" height="200"/>
 
 ##### Sentiment Analysis
 
