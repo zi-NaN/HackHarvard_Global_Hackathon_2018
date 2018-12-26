@@ -14,8 +14,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
 
-import { NgxEchartsModule } from 'ngx-echarts';
-
 @NgModule({
   declarations: [
     MyApp,
@@ -30,7 +28,6 @@ import { NgxEchartsModule } from 'ngx-echarts';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    NgxEchartsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
