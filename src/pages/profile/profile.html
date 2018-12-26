@@ -8,8 +8,62 @@
 
 <ion-content>
   <ion-list>
-    <ion-list-header>Hi (name var),welcome</ion-list-header>
+    <ion-avatar class="avatar" >
+        <img src="/assets/imgs/avatar.png" height="50" width="50">
+        </ion-avatar>
     <ion-item>
+        <ion-label floating>姓名</ion-label>
+        <ion-input type="text" name="name" required></ion-input>
     </ion-item>
+    <ion-item>
+        <ion-label>性別</ion-label>
+        <ion-select name="gender" required>
+          <ion-option value="female">女</ion-option>
+          <ion-option value="male">男</ion-option>
+          <ion-option value="other">其他</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+          <ion-label >出生日期</ion-label>
+          <ion-datetime required name="birthdate" displayFormat="DD MMM YYYY" pickerFormat="DD MMM YYYY" [(ngModel)]="dob" [ngModelOptions]="{standalone:true}"></ion-datetime>
+    </ion-item>
+  
+    <ion-item>
+          <ion-toggle checked="true"></ion-toggle>
+          <ion-label>
+              打開消息通知
+          </ion-label>
+    </ion-item>
+    <ion-item>
+          我的好友
+          <ion-badge item-end>136</ion-badge>
+    </ion-item>
+    <ion-item>
+          查看歷史消息
+          <button ion-button outline item-end icon-start>
+            <ion-icon name="star"></ion-icon>
+            我的歷史消息
+          </button>
+    </ion-item>
+    <ion-item>
+        <ion-label>字號大小</ion-label>
+        <ion-select name="size" required>
+          <ion-option value="large">大</ion-option>
+          <ion-option value="extra-large">超大</ion-option>
+          <ion-option value="standard">標準</ion-option>
+        </ion-select>
+    </ion-item>
+        <ion-fab right bottom>
+            <button ion-fab color="light"><ion-icon name="arrow-dropleft"></ion-icon></button>
+            <ion-fab-list side="left">
+              <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+              <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+              <button ion-fab><ion-icon name="logo-whatsapp"></ion-icon></button>
+              <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+            </ion-fab-list>
+          </ion-fab>
   </ion-list>
+  <div padding>
+      <button ion-button color="primary" block>登入</button>
+    </div>
 </ion-content>

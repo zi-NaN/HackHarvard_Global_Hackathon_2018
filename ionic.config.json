@@ -1,6 +1,8 @@
 {
   "name": "hackharvard",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular",
   "id": "c4bfc15f"
 }
