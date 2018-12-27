@@ -15,6 +15,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { NgxEchartsModule } from 'ngx-echarts';
 
+import { AboutService } from '../pages/about/about.service';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -41,6 +43,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
   providers: [
     StatusBar,
     SplashScreen,
+    AboutService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
