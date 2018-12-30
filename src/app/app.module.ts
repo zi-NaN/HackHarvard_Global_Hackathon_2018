@@ -2,6 +2,8 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { SQLite } from '@ionic-native/sqlite';
 
 import { AboutPage } from '../pages/about/about';
 import { EmotionTrend } from '../pages/about/emotionLineChart/trend';
@@ -12,10 +14,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
-import { NgxEchartsModule } from 'ngx-echarts';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { AboutService } from '../pages/about/about.service';
+import { DatabaseService } from '../services/database';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { AboutService } from '../pages/about/about.service';
   imports: [
     BrowserModule,
     NgxEchartsModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,6 +47,8 @@ import { AboutService } from '../pages/about/about.service';
     StatusBar,
     SplashScreen,
     AboutService,
+    SQLite,
+    DatabaseService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

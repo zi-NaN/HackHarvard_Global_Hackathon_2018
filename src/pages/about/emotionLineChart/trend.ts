@@ -1,23 +1,28 @@
 import { Component } from '@angular/core';
 import { AboutService } from '../about.service';
+import { DatabaseService } from '../../../services/database'
 
 @Component({
   selector: 'emotion-trend',
   templateUrl: 'trend.html',
   styles: ['./trend.scss'],
-  providers: [AboutService]
+  providers: [AboutService, DatabaseService]
 })
 
 export class EmotionTrend {
   data: any;
   options: any;
-  constructor(public service: AboutService) {
-    // TODO: change col name 
-    let res: any = this.service.getData();
+
+  constructor(public service: AboutService, public dbservice: DatabaseService) {
+    let begin = this.service.getDateRange()[0];
+    let end = this.service.getDateRange()[1];
+    let res = this.dbservice.getDateRangeEntry(begin, end);
     
     this.data = [];
-    for(let i=0; i<res.rows.length; i++) {
-      this.data.push({date: res.rows.item(i).date, emotionScore: res.rows.item(i).score})
+    if (res) {
+      for(let i=0; i<res.rows.length; i++) {
+        this.data.push({date: res.rows.item(i).time, emotionScore: res.rows.item(i).score})
+      }
     }
 
     this.refresh();

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { AboutService } from '../about.service';
+import { DatabaseService } from '../../../services/database';
 
 @Component({
   selector: 'emotion-suggestion',
   templateUrl: 'suggestion.html',
-  providers: [AboutService]
+  providers: [AboutService, DatabaseService]
 })
 
 export class EmotionSuggestion {
@@ -21,8 +22,10 @@ export class EmotionSuggestion {
                           '發現心情緊張時，停下來休息一下並和朋友傾訴。'];
   suggestionPositive: string[] = ['把你的快樂分享給他人吧~']
 
-  constructor(public service: AboutService) {
-    this.score = this.service.getScore();
+  constructor(public service: AboutService, public dbservice: DatabaseService) {
+    let begin = this.service.getDateRange()[0];
+    let end = this.service.getDateRange()[1];
+    this.score = this.dbservice.getAvgScore(begin, end);
   }
 
   refreshSuggestion() {

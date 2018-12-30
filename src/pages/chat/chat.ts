@@ -6,7 +6,7 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'chat.html'
 })
 export class ChatPage {
-
+  
   constructor(public navCtrl: NavController) {
 
   }
