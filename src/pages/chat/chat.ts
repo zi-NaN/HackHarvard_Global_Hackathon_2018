@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+<<<<<<< HEAD
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ChatbotPage} from '../chatbot/chatbot';
 
@@ -51,6 +52,18 @@ export class ChatPage {
       }, err => {
         this.sending = false;
       } );
+=======
+import { NavController } from 'ionic-angular';
+
+@Component({
+  selector: 'page-chat',
+  templateUrl: 'chat.html'
+})
+export class ChatPage {
+  
+  constructor(public navCtrl: NavController) {
+
+>>>>>>> 7d2529b097f75d57b9e8768408af5bfc8a07bbb2
   }
 
 }

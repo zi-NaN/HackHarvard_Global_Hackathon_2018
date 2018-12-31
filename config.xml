@@ -84,5 +84,8 @@
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-sqlite-storage" spec="2.6.0" />
     <engine name="browser" spec="5.0.4" />
+<<<<<<< HEAD
     <plugin name="cordova-plugin-speechrecognition" spec="~1.1.2" />
+=======
+>>>>>>> 7d2529b097f75d57b9e8768408af5bfc8a07bbb2
 </widget>

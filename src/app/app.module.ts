@@ -4,6 +4,8 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { SQLite } from '@ionic-native/sqlite';
 
 import { AboutPage } from '../pages/about/about';
 import { EmotionTrend } from '../pages/about/emotionLineChart/trend';
@@ -23,6 +25,8 @@ import { PusherServiceProvider } from '../providers/pusher-service/pusher-servic
 import { ChatServiceProvider } from '../providers/chat-service/chat-service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AboutService } from '../pages/about/about.service';
+import { DatabaseService } from '../services/database';
 
 @NgModule({
   declarations: [
@@ -41,6 +45,11 @@ import { FormsModule } from '@angular/forms';
     IonicStorageModule.forRoot(),
     HttpClientModule,
     FormsModule,
+    TabsPage,
+    BrowserModule,
+    NgxEchartsModule,
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -58,7 +67,11 @@ import { FormsModule } from '@angular/forms';
     PusherServiceProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PusherServiceProvider,
-    ChatServiceProvider
+    ChatServiceProvider,
+    AboutService,
+    SQLite,
+    DatabaseService,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}
