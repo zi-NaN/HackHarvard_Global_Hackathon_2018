@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
 
-import { SpeechRecognition } from '@ionic-native/speech-recognition';
+import { DatabaseService } from '../services/database'
 
 @Component({
   templateUrl: 'app.html'
