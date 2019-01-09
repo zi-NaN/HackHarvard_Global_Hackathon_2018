@@ -8,8 +8,6 @@ The chat App with emotion analyzing function built to help the local elderly wit
 
 Our team, Local One, has focused on the life quality of the elderly in Hong Kong. The situation of the elderly is usually not noticed by the majority. We would like to investigate the group and find out any problems that we could help. Limited by time and ability, the scope of the investigation is limited in Hong Kong, the living city of all team members. Unsurprisingly,  we have found several problems arose among those people. After sincere consideration, we have chosen the emotional issues as the team's topic. 
 
-----------------------------------------------------------
-<<<<<<< HEAD
 ## Features
 
 ### 1. AI Chatbot
@@ -36,12 +34,8 @@ On iOS devices, the speech reconginition does not stop by automatically. So a fu
 > supported platforms: Android/ iOS
 > reference link: [cordova-plugin-speechrecognition](https://github.com/pbakondy/cordova-plugin-speechrecognition)
 
-
--------------------------------------------------------------
-=======
 ### Demo
 
->>>>>>> 7d2529b097f75d57b9e8768408af5bfc8a07bbb2
 ##### Chat
 
 <img src="/src/assets/imgs/demo/chat.png" alt="chat" width="320" height="450"/>
@@ -52,15 +46,7 @@ On iOS devices, the speech reconginition does not stop by automatically. So a fu
 
 ##### User Profile
 
-<<<<<<< HEAD
-<img src="/src/assets/imgs/demo/profile.png" alt="profile" width="320" height="450"/>
-
-##### Chatbot UI
-
-<img src="/src/assets/imgs/demo/chatbot.png" alt="chatbot" width="320" height="450"/>
-=======
 <img src="/src/assets/imgs/demo/profile.png" alt="mood" width="320" height="450"/>
->>>>>>> 7d2529b097f75d57b9e8768408af5bfc8a07bbb2
 
 ----------------------------------------------------------
 
