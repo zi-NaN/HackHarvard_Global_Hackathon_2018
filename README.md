@@ -52,31 +52,24 @@ On iOS devices, the speech reconginition does not stop by automatically. So a fu
 <img src="/src/assets/imgs/demo/profile.png" alt="mood" width="320" height="450"/>
 
 ----------------------------------------------------------
-## Installation
+## Usage
 
-Clone with HTTPS:
+### Use bash
 
-`git clone https://github.com/zi-NaN/HackHarvard_Global_Hackathon_2018.git`
+```
+$ git clone https://github.com/zi-NaN/HackHarvard_Global_Hackathon_2018.git
 
-or 
+$ cd HackHarvard_Global_Hackathon_2018
 
-Clone with SSH:
+$ npm install    # install all packages
 
-`git clone git@github.com:zi-NaN/HackHarvard_Global_Hackathon_2018.git`
+$ ionic serve    # App opens in browser
+```
 
-Install packages:
+After successfully starting the app, you should be able to use the app in your default broswer.
 
-`npm install .`
 
-Run following command to open the app in web browser:
-
-`ionic serve`  
-
-or 
-
-`ionic s`
-
-----------------------------------------------------------
+---------------------------------------------------------
 ## Version
 ionic (Ionic CLI)  : 4.6.0 (/usr/local/lib/node_modules/ionic)
 
