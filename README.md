@@ -34,7 +34,7 @@ On iOS devices, the speech reconginition does not stop by automatically. So a fu
 > supported platforms: Android/ iOS
 > reference link: [cordova-plugin-speechrecognition](https://github.com/pbakondy/cordova-plugin-speechrecognition)
 
-### Demo
+## Demo
 
 ##### Chat
 
@@ -49,8 +49,32 @@ On iOS devices, the speech reconginition does not stop by automatically. So a fu
 <img src="/src/assets/imgs/demo/profile.png" alt="mood" width="320" height="450"/>
 
 ----------------------------------------------------------
+## Installation
 
-### Version
+Clone with HTTPS:
+
+`git clone https://github.com/zi-NaN/HackHarvard_Global_Hackathon_2018.git`
+
+or 
+
+Clone with SSH:
+
+`git clone git@github.com:zi-NaN/HackHarvard_Global_Hackathon_2018.git`
+
+Install packages:
+
+`npm install .`
+
+Run following command to open the app in web browser:
+
+`ionic serve`  
+
+or 
+
+`ionic s`
+
+----------------------------------------------------------
+## Version
 ionic (Ionic CLI)  : 4.6.0 (/usr/local/lib/node_modules/ionic)
 
 Ionic Framework    : ionic-angular 3.9.2

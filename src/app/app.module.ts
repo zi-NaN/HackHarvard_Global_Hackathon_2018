@@ -37,7 +37,7 @@ import { DatabaseService } from '../services/database';
     ProfilePage,
     ChatPage,
     ChatbotPage,
-    TabsPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -45,11 +45,7 @@ import { DatabaseService } from '../services/database';
     IonicStorageModule.forRoot(),
     HttpClientModule,
     FormsModule,
-    TabsPage,
-    BrowserModule,
-    NgxEchartsModule,
-    IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    NgxEchartsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -66,12 +62,10 @@ import { DatabaseService } from '../services/database';
     SpeechRecognition,
     PusherServiceProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PusherServiceProvider,
     ChatServiceProvider,
     AboutService,
     SQLite,
     DatabaseService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}
