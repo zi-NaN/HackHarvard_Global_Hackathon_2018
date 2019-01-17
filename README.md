@@ -56,7 +56,7 @@ On iOS devices, the speech reconginition does not stop by automatically. So a fu
 
 ### Use bash
 
-```
+```bash
 $ git clone https://github.com/zi-NaN/HackHarvard_Global_Hackathon_2018.git
 
 $ cd HackHarvard_Global_Hackathon_2018
