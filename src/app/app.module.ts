@@ -1,6 +1,6 @@
 // ../src/app/app.module.ts
 
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule, ErrorHandler, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -12,7 +12,6 @@ import { EmotionTrend } from '../pages/about/emotionLineChart/trend';
 import { EmotionSuggestion } from '../pages/about/emotionSuggestion/suggestion';
 import { ProfilePage } from '../pages/profile/profile';
 import { ChatPage } from '../pages/chat/chat';
-import { ChatbotPage } from '../pages/chatbot/chatbot';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -20,13 +19,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
 
 import { SpeechRecognition } from '@ionic-native/speech-recognition';
-import { PusherServiceProvider } from '../providers/pusher-service/pusher-service';
 
-import { ChatServiceProvider } from '../providers/chat-service/chat-service';
+import { ChatService, ChatMessage } from '../providers/chat-service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AboutService } from '../pages/about/about.service';
 import { DatabaseService } from '../services/database';
+import { EmojiProvider } from '../providers/emoji';
+
+
 
 @NgModule({
   declarations: [
@@ -36,7 +37,6 @@ import { DatabaseService } from '../services/database';
     EmotionSuggestion,
     ProfilePage,
     ChatPage,
-    ChatbotPage,
     TabsPage
   ],
   imports: [
@@ -53,19 +53,22 @@ import { DatabaseService } from '../services/database';
     AboutPage,
     ProfilePage,
     ChatPage,
-    ChatbotPage,
     TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     SpeechRecognition,
-    PusherServiceProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ChatServiceProvider,
+    ChatMessage,
+    ChatService,
     AboutService,
     SQLite,
     DatabaseService,
+    EmojiProvider
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ]
 })
 export class AppModule {}

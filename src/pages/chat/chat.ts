@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+// import { IonicPage } from 'ionic-angular';
 
 @Component({
   selector: 'page-chat',
@@ -7,8 +7,13 @@ import { NavController } from 'ionic-angular';
 })
 export class ChatPage {
   
-  constructor(public navCtrl: NavController) {
+  toUser : {toUserId: string, toUserName: string};
 
+  constructor() {
+    this.toUser = {
+      toUserId:'210000198410281948',
+      toUserName:'chatbot'
+    }
   }
 
 }
