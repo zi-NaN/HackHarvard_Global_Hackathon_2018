@@ -70,7 +70,7 @@ After successfully starting the app, you should be able to use the app in your d
 
 
 ---------------------------------------------------------
-## Version
+## Built with
 ionic (Ionic CLI)  : 4.6.0 (/usr/local/lib/node_modules/ionic)
 
 Ionic Framework    : ionic-angular 3.9.2
@@ -80,3 +80,7 @@ Ionic Framework    : ionic-angular 3.9.2
 NodeJS : v8.10.0 (/usr/bin/node)
 
 npm    : 3.5.2
+
+[Dialogflow](https://dialogflow.com/):  Build natural and rich conversational experiences powered by AI, built on Google Infrastructure.
+
+[Pusher](https://pusher.com/): Hosted APIs to built Realtime Apps. 

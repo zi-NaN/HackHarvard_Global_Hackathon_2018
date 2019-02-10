@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { IonicPage, NavParams } from 'ionic-angular';
 import { Events, Content } from 'ionic-angular';
 import { ChatService, ChatMessage, UserInfo } from "../../providers/chat-service";
+//import { SpeechRecognition } from '@ionic-native/speech-recognition';
 
 @IonicPage()
 @Component({
@@ -9,6 +10,9 @@ import { ChatService, ChatMessage, UserInfo } from "../../providers/chat-service
   templateUrl: 'chatbot.html',
 })
 export class ChatbotPage {
+
+  // speech to text
+  speech: string = '';
 
   @ViewChild(Content) content: Content;
   @ViewChild('chat_input') messageInput: ElementRef;
@@ -18,9 +22,11 @@ export class ChatbotPage {
   editorMsg = '';
   showEmojiPicker = false;
 
+  
   constructor(navParams: NavParams,
-              private chatService: ChatService,
-              private events: Events,) {
+    private chatService: ChatService,
+    private events: Events) {
+    // private speechRecognition: SpeechRecognition) {
     // Get the navParams toUserId parameter
     this.toUser = {
       id: navParams.get('toUserId'),
@@ -28,10 +34,42 @@ export class ChatbotPage {
     };
     // Get mock user information
     this.chatService.getUserInfo()
-    .then((res) => {
-      this.user = res
-    });
+      .then((res) => {
+        this.user = res
+      });
   }
+/** 
+  // speech recongnition permissions
+  //  Cordova not applicable for browser side. 
+  // Hence the reason for Cordova_not_available
+
+  ngOnInit() {
+
+    this.speechRecognition.hasPermission()
+      .then((hasPermission: boolean) => {
+
+        if (!hasPermission) {
+          this.speechRecognition.requestPermission()
+            .then(
+              () => console.log('Granted'),
+              () => console.log('Denied')
+            )
+        }
+      });
+  }
+
+  // start listening
+  start() {
+
+    this.speechRecognition.startListening()
+      .subscribe(
+        (matches: Array<string>) => {
+          this.speech = matches[0];
+        },
+        (onerror) => console.log('error:', onerror)
+      )
+  }
+*/
 
   ionViewWillLeave() {
     // unsubscribe
@@ -72,11 +110,11 @@ export class ChatbotPage {
   getMsg() {
     // Get mock message list
     return this.chatService
-    .getMsgList()
-    .subscribe(res => {
-      this.msgList = res;
-      this.scrollToBottom();
-    });
+      .getMsgList()
+      .subscribe(res => {
+        this.msgList = res;
+        this.scrollToBottom();
+      });
   }
 
   /**
@@ -106,12 +144,12 @@ export class ChatbotPage {
     }
 
     this.chatService.sendMsg(newMsg)
-    .then(() => {
-      let index = this.getMsgIndexById(id);
-      if (index !== -1) {
-        this.msgList[index].status = 'success';
-      }
-    })
+      .then(() => {
+        let index = this.getMsgIndexById(id);
+        if (index !== -1) {
+          this.msgList[index].status = 'success';
+        }
+      })
   }
 
   /**
@@ -149,7 +187,7 @@ export class ChatbotPage {
   }
 
   private setTextareaScroll() {
-    const textarea =this.messageInput.nativeElement;
+    const textarea = this.messageInput.nativeElement;
     textarea.scrollTop = textarea.scrollHeight;
   }
 }

@@ -18,7 +18,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
 
-import { SpeechRecognition } from '@ionic-native/speech-recognition';
+// import { SpeechRecognition } from '@ionic-native/speech-recognition';
 
 import { ChatService, ChatMessage } from '../providers/chat-service';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,6 +26,8 @@ import { FormsModule } from '@angular/forms';
 import { AboutService } from '../pages/about/about.service';
 import { DatabaseService } from '../services/database';
 import { EmojiProvider } from '../providers/emoji';
+import { PusherServiceProvider } from '../providers/pusher-service/pusher-service';
+import { ChatbotServiceProvider } from '../providers/chatbot-service/chatbot-service';
 
 
 
@@ -58,14 +60,16 @@ import { EmojiProvider } from '../providers/emoji';
   providers: [
     StatusBar,
     SplashScreen,
-    SpeechRecognition,
+    // SpeechRecognition,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ChatMessage,
     ChatService,
     AboutService,
     SQLite,
     DatabaseService,
-    EmojiProvider
+    EmojiProvider,
+    PusherServiceProvider,
+    ChatbotServiceProvider
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
