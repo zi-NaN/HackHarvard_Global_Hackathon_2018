@@ -6,9 +6,9 @@
 
 The chat App with emotion analyzing function built to help the local elderly with mental health.
 
-Our team, Local One, has focused on the life quality of the elderly in Hong Kong. The situation of the elderly is usually not noticed by the majority. We would like to investigate the group and find out any problems that we could help. Limited by time and ability, the scope of the investigation is limited in Hong Kong, the living city of all team members. Unsurprisingly,  we have found several problems arose among those people. After sincere consideration, we have chosen the emotional issues as the team's topic. 
+Our team, **Local One**, has focused on the life quality of the elderly in Hong Kong. The situation of the elderly is usually not noticed by the majority. We would like to investigate the group and find out any problems that we could help. Limited by time and ability, the scope of the investigation is limited in Hong Kong, the living city of all team members. Unsurprisingly,  we have found several problems arose among those people. After sincere consideration, we have chosen the emotional issues as the team's topic. 
 
--------------------------------------------------------------
+
 ## Features
 
 ### 1. AI Chatbot
@@ -35,7 +35,7 @@ On iOS devices, the speech reconginition does not stop by automatically. So a fu
 > supported platforms: Android/ iOS
 > reference link: [cordova-plugin-speechrecognition](https://github.com/pbakondy/cordova-plugin-speechrecognition)
 
-------------------------------------------------------------------
+
 
 ## Demo
 
@@ -51,7 +51,7 @@ On iOS devices, the speech reconginition does not stop by automatically. So a fu
 
 <img src="/src/assets/imgs/demo/profile.png" alt="mood" width="320" height="450"/>
 
-----------------------------------------------------------
+
 ## Usage
 
 ### Use bash
@@ -68,8 +68,73 @@ $ ionic serve    # App opens in browser
 
 After successfully starting the app, you should be able to use the app in your default broswer.
 
+### Reminder
 
----------------------------------------------------------
+To make Ionic Native Plugin accessable via browser and `ionic serve` session instead of just phones, please uncomment following original plugin class and override the methods you would like to test:
+
+#### Speech to Text: 
+
+1. First un-comment following blocks in `/src/app/app.module.ts`:
+
+```typescript
+import { SpeechRecognition } from '@ionic-native/speech-recognition';  // line 21
+// more code...
+providers: [     
+    StatusBar,
+    ...
+    SpeechRecognition,   // line 63
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ...
+  ],
+// more code...
+```
+
+2. Then go to `/src/pages/chatbot/chatbot.ts`, uncomment following:
+```typescript
+import { SpeechRecognition } from '@ionic-native/speech-recognition';  // line 5
+// ...line 28
+// add speech to text plugin to constructor
+private speechRecognition: SpeechRecognition) {
+    
+// line 41
+  ngOnInit() {
+
+    this.speechRecognition.hasPermission()
+      .then((hasPermission: boolean) => {
+
+        if (!hasPermission) {
+          this.speechRecognition.requestPermission()
+            .then(
+              () => console.log('Granted'),
+              () => console.log('Denied')
+            )
+        }
+      });
+  }
+  // start listening
+  start() {
+
+    this.speechRecognition.startListening()
+      .subscribe(
+        (matches: Array<string>) => {
+          this.speech = matches[0];
+        },
+        (onerror) => console.log('error:', onerror)
+      )
+  }
+```
+3. Mock Plugins to use in the browser. 
+```typescript
+// extends the original class
+class SpeechMock extends SpeechRecongnition {
+  // *** 
+}
+// then override the previous class in the module
+providers: [
+  { provide: SpeechRecongnition, useClass: SpeechMock }
+]
+```
+
 ## Built with
 ionic (Ionic CLI)  : 4.6.0 (/usr/local/lib/node_modules/ionic)
 
